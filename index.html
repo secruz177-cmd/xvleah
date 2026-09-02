@@ -1,0 +1,1000 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Confirmación · XV Leah</title>
+
+
+<style>
+
+/* =====================================================
+   COLORES
+===================================================== */
+
+:root {
+
+    --azul: #1C2F57;
+    --lila: #e6b545;
+
+    --fondo: #1C2F57;
+
+    --texto: #26324A;
+
+    --blanco: #FFFFFF;
+
+}
+
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    font-family:
+        tt lovelies script,
+        "Montserrat",
+        serif;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            var(--fondo)
+        );
+
+    color: var(--texto);
+
+}
+
+
+/* =====================================================
+   TARJETA
+===================================================== */
+
+.card {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    background:
+        rgba(255,255,255,0.97);
+
+    border:
+        1px solid #e8e0f5;
+
+    border-radius: 28px;
+
+    padding: 40px 28px;
+
+    text-align: center;
+
+    box-shadow:
+        0 18px 55px
+        rgba(28,47,87,0.12);
+
+}
+
+
+/* =====================================================
+   TEXTO SUPERIOR
+===================================================== */
+
+.mini {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #7f70a1;
+
+}
+
+
+h1 {
+
+    margin:
+        15px 0 8px;
+
+    font-size: 34px;
+
+    color: var(--azul);
+
+}
+
+
+.hello {
+
+    font-size: 20px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =====================================================
+   LUGARES RESERVADOS
+===================================================== */
+
+.reserved {
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background: #faf8fe;
+
+    border:
+        1px solid #eee7f8;
+
+}
+
+
+.number {
+
+    font-size: 45px;
+
+    font-weight: bold;
+
+    line-height: 1;
+
+    color: var(--azul);
+
+}
+
+
+.label {
+
+    margin-top: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    color: #6e7180;
+
+}
+
+
+/* =====================================================
+   PREGUNTA
+===================================================== */
+
+.question {
+
+    margin:
+        30px 0 15px;
+
+    font-size: 21px;
+
+    color: var(--azul);
+
+}
+
+
+/* =====================================================
+   BOTONES DE CANTIDAD
+===================================================== */
+
+.options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 9px;
+
+}
+
+
+.options button {
+
+    padding: 14px 6px;
+
+    border:
+        1px solid #d9cdef;
+
+    border-radius: 13px;
+
+    background: white;
+
+    color: var(--azul);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        0.15s;
+
+}
+
+
+.options button:hover {
+
+    border-color:
+        var(--lila);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.options button.selected {
+
+    background:
+        var(--azul);
+
+    color: white;
+
+    border-color:
+        var(--azul);
+
+}
+
+
+/* =====================================================
+   BOTÓN WHATSAPP
+===================================================== */
+
+.whatsapp {
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    background: #25D366;
+
+    color: white;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    text-decoration: none;
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    transition:
+        0.2s;
+
+}
+
+
+.whatsapp.enabled {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+
+/* =====================================================
+   NOTA
+===================================================== */
+
+.note {
+
+    margin-top: 14px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    color: #777;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error {
+
+    color: #9b3348;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   CELULARES PEQUEÑOS
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .card {
+
+        padding:
+            32px 20px;
+
+    }
+
+
+    h1 {
+
+        font-size: 29px;
+
+    }
+
+
+    .options {
+
+        gap: 6px;
+
+    }
+
+
+    .options button {
+
+        padding:
+            12px 4px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+    <!-- =================================================
+         ENCABEZADO
+    ================================================== -->
+
+    <div class="mini">
+
+        XV Leah · Confirmación
+
+    </div>
+
+
+    <h1 id="title">
+
+        ¡Nos encantará contar contigo!
+
+    </h1>
+
+
+    <p
+        class="hello"
+        id="hello">
+    </p>
+
+
+
+    <!-- =================================================
+         LUGARES RESERVADOS
+    ================================================== -->
+
+    <div class="reserved">
+
+
+        <div
+            class="number"
+            id="max">
+
+            —
+
+        </div>
+
+
+        <div class="label">
+
+            lugares reservados para ustedes
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         PREGUNTA
+    ================================================== -->
+
+    <div class="question">
+
+        ¿Cuántas personas asistirán?
+
+    </div>
+
+
+
+    <!-- =================================================
+         BOTONES
+    ================================================== -->
+
+    <div
+        class="options"
+        id="options">
+    </div>
+
+
+
+    <!-- =================================================
+         WHATSAPP
+    ================================================== -->
+
+    <a
+        id="whatsapp"
+        class="whatsapp"
+        target="_blank"
+        rel="noopener">
+
+        Confirmar por WhatsApp
+
+    </a>
+
+
+    <div
+        class="note"
+        id="note">
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/*
+################################################################
+################################################################
+
+        ⭐⭐⭐  SOLO MODIFICA ESTA PARTE ⭐⭐⭐
+
+################################################################
+################################################################
+
+
+Aquí vas a colocar TODOS tus invitados.
+
+Cada invitado necesita:
+
+1. Un código
+2. Un nombre
+3. La cantidad de lugares reservados
+
+
+Ejemplo:
+
+"familia-perez": {
+
+    nombre: "Familia Pérez",
+
+    lugares: 5
+
+}
+
+
+El código NO debe llevar espacios.
+
+
+Puedes utilizar:
+
+familia-perez
+familia-lopez
+maria
+juan
+ana
+familia-garcia
+
+
+IMPORTANTE:
+
+El código será utilizado para crear el enlace
+personalizado de esa persona.
+
+
+################################################################
+*/
+
+
+const INVITADOS = {
+
+
+    /*
+    ------------------------------------------------------------
+    EJEMPLO 1
+    ------------------------------------------------------------
+    */
+
+    "familia-perez": {
+
+        nombre:
+            "Familia Pérez",
+
+        lugares:
+            5
+
+    },
+
+
+    /*
+    ------------------------------------------------------------
+    EJEMPLO 2
+    ------------------------------------------------------------
+    */
+
+    "familia-lopez": {
+
+        nombre:
+            "Familia López",
+
+        lugares:
+            2
+
+    },
+
+
+    /*
+    ------------------------------------------------------------
+    EJEMPLO 3
+    ------------------------------------------------------------
+    */
+
+    "familia-cruz": {
+
+        nombre:
+            "Familia Cruz",
+
+        lugares:
+            4
+
+    },
+
+
+    /*
+    ------------------------------------------------------------
+    EJEMPLO 4
+    ------------------------------------------------------------
+    */
+
+    "maria": {
+
+        nombre:
+            "María",
+
+        lugares:
+            1
+
+    }
+
+
+};
+
+
+/*
+################################################################
+################################################################
+
+        ⭐⭐⭐  NO MODIFIQUES NADA DE AQUÍ ABAJO ⭐⭐⭐
+
+################################################################
+################################################################
+*/
+
+
+/*
+===============================================================
+WHATSAPP
+===============================================================
+*/
+
+const WHATSAPP =
+    "50494921882";
+
+
+/*
+===============================================================
+NOMBRE DEL EVENTO
+===============================================================
+*/
+
+const EVENTO =
+    "los XV de Leah";
+
+
+/*
+===============================================================
+LEER EL CÓDIGO DEL INVITADO
+===============================================================
+*/
+
+const parametros =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const id =
+    (
+        parametros.get("id") || ""
+    )
+    .toLowerCase()
+    .trim();
+
+
+/*
+===============================================================
+BUSCAR INVITADO
+===============================================================
+*/
+
+const invitado =
+    INVITADOS[id];
+
+
+/*
+===============================================================
+ELEMENTOS
+===============================================================
+*/
+
+const title =
+    document.getElementById(
+        "title"
+    );
+
+
+const hello =
+    document.getElementById(
+        "hello"
+    );
+
+
+const max =
+    document.getElementById(
+        "max"
+    );
+
+
+const options =
+    document.getElementById(
+        "options"
+    );
+
+
+const whatsapp =
+    document.getElementById(
+        "whatsapp"
+    );
+
+
+const note =
+    document.getElementById(
+        "note"
+    );
+
+
+/*
+===============================================================
+COMPROBAR INVITADO
+===============================================================
+*/
+
+if (invitado) {
+
+
+    /*
+    -----------------------------------------------------------
+    SALUDO
+    -----------------------------------------------------------
+    */
+
+    hello.textContent =
+        `¡Hola, ${invitado.nombre}! 💜`;
+
+
+    /*
+    -----------------------------------------------------------
+    MOSTRAR LUGARES
+    -----------------------------------------------------------
+    */
+
+    max.textContent =
+        invitado.lugares;
+
+
+
+    /*
+    -----------------------------------------------------------
+    CREAR BOTONES
+    -----------------------------------------------------------
+    */
+
+    for (
+        let i = 1;
+        i <= invitado.lugares;
+        i++
+    ) {
+
+
+        const boton =
+            document.createElement(
+                "button"
+            );
+
+
+        boton.textContent =
+            i;
+
+
+        boton.type =
+            "button";
+
+
+
+        /*
+        -------------------------------------------------------
+        CUANDO EL INVITADO SELECCIONA
+        -------------------------------------------------------
+        */
+
+        boton.onclick =
+            function() {
+
+
+                /*
+                Quitar selección
+                */
+
+                document
+                    .querySelectorAll(
+                        ".options button"
+                    )
+                    .forEach(
+                        function(b) {
+
+                            b.classList.remove(
+                                "selected"
+                            );
+
+                        }
+                    );
+
+
+
+                /*
+                Marcar seleccionado
+                */
+
+                boton.classList.add(
+                    "selected"
+                );
+
+
+
+                /*
+                ------------------------------------------------
+                TEXTO "PERSONA/PERSONAS"
+                ------------------------------------------------
+                */
+
+                const personas =
+                    i === 1
+                        ? "persona"
+                        : "personas";
+
+
+
+                /*
+                ------------------------------------------------
+                MENSAJE WHATSAPP
+                ------------------------------------------------
+                */
+
+                const mensaje =
+
+                    `¡Hola! 💜 ` +
+
+                    `Confirmo mi asistencia ` +
+
+                    `a ${EVENTO}. ` +
+
+                    `Asistiremos ${i} ${personas}. ` +
+
+                    `Mi invitación tenía ` +
+
+                    `${invitado.lugares} ` +
+
+                    `lugares reservados. ` +
+
+                    `Nombre: ${invitado.nombre}.`;
+
+
+
+                /*
+                ------------------------------------------------
+                CREAR ENLACE WHATSAPP
+                ------------------------------------------------
+                */
+
+                whatsapp.href =
+
+                    `https://wa.me/` +
+
+                    `${WHATSAPP}` +
+
+                    `?text=` +
+
+                    encodeURIComponent(
+                        mensaje
+                    );
+
+
+
+                /*
+                ------------------------------------------------
+                ACTIVAR BOTÓN
+                ------------------------------------------------
+                */
+
+                whatsapp.classList.add(
+                    "enabled"
+                );
+
+
+
+                /*
+                ------------------------------------------------
+                MENSAJE DE AYUDA
+                ------------------------------------------------
+                */
+
+                note.textContent =
+
+                    "Al tocar el botón se abrirá " +
+
+                    "WhatsApp con el mensaje " +
+
+                    "listo para enviar.";
+
+            };
+
+
+        /*
+        -------------------------------------------------------
+        AGREGAR BOTÓN A LA PÁGINA
+        -------------------------------------------------------
+        */
+
+        options.appendChild(
+            boton
+        );
+
+    }
+
+
+}
+
+
+/*
+################################################################
+################################################################
+
+                    INVITADO NO ENCONTRADO
+
+################################################################
+################################################################
+*/
+
+else {
+
+
+    title.textContent =
+        "Enlace no encontrado";
+
+
+    hello.innerHTML =
+
+        '<span class="error">' +
+
+        'Verifica que el enlace de ' +
+
+        'confirmación sea correcto.' +
+
+        '</span>';
+
+
+
+    document
+        .querySelector(
+            ".reserved"
+        )
+        .style.display =
+            "none";
+
+
+    document
+        .querySelector(
+            ".question"
+        )
+        .style.display =
+            "none";
+
+
+    options.style.display =
+        "none";
+
+
+    whatsapp.style.display =
+        "none";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
+```
