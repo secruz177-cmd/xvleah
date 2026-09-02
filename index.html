@@ -26,17 +26,17 @@
 
 :root {
 
+    --azul-marino: #1C2F57;
+
+    --azul: #05308D;
+
     --dorado: #e6a945;
 
-    --azul-marino: #1c2f57;
+    --blanco: #FFFFFF;
 
-    --azul: #05308d;
+    --dorado-suave: rgba(230,169,69,0.55);
 
-    --blanco: #ffffff;
-
-    --crema: #fcfaf6;
-
-    --gris: #6f7480;
+    --texto-suave: rgba(255,255,255,0.82);
 
 }
 
@@ -62,30 +62,94 @@ body {
 
     align-items: center;
 
-    padding: 25px;
+    padding: 25px 15px;
 
     font-family:
         'Lora',
         Georgia,
         serif;
 
+    color: var(--blanco);
+
     background:
 
         radial-gradient(
-            circle at top left,
-            rgba(230,169,69,0.12),
-            transparent 35%
+            circle at 15% 10%,
+            rgba(5,48,141,0.45),
+            transparent 28%
         ),
 
         radial-gradient(
-            circle at bottom right,
-            rgba(5,48,141,0.10),
-            transparent 35%
+            circle at 90% 85%,
+            rgba(5,48,141,0.35),
+            transparent 30%
         ),
 
-        var(--crema);
+        var(--azul-marino);
 
-    color: var(--azul-marino);
+    position: relative;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =====================================================
+   ESTRELLAS DECORATIVAS
+===================================================== */
+
+body::before {
+
+    content:
+        "✦     ˚          ✧          ✦     ˚";
+
+    position: fixed;
+
+    top: 25px;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: var(--dorado);
+
+    font-size: 13px;
+
+    letter-spacing: 12px;
+
+    opacity: 0.75;
+
+    pointer-events: none;
+
+}
+
+
+body::after {
+
+    content:
+        "✧       ✦          ˚       ✧";
+
+    position: fixed;
+
+    bottom: 25px;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: var(--dorado);
+
+    font-size: 12px;
+
+    letter-spacing: 15px;
+
+    opacity: 0.7;
+
+    pointer-events: none;
 
 }
 
@@ -98,26 +162,35 @@ body {
 
     width: 100%;
 
-    max-width: 500px;
+    max-width: 480px;
 
-    background:
-        rgba(255,255,255,0.98);
+    min-height: 650px;
 
-    border:
-        1px solid
-        rgba(230,169,69,0.35);
-
-    border-radius: 26px;
-
-    padding: 42px 30px 35px;
+    padding: 48px 32px 40px;
 
     text-align: center;
 
     position: relative;
 
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.035),
+            rgba(5,48,141,0.14)
+        );
+
+    border:
+
+        1px solid
+        rgba(230,169,69,0.65);
+
+    border-radius: 4px;
+
     box-shadow:
+
         0 20px 60px
-        rgba(28,47,87,0.13);
+        rgba(0,0,0,0.28);
 
     overflow: hidden;
 
@@ -125,7 +198,7 @@ body {
 
 
 /* =====================================================
-   DETALLE DORADO SUPERIOR
+   BORDE INTERIOR
 ===================================================== */
 
 .card::before {
@@ -134,28 +207,41 @@ body {
 
     position: absolute;
 
-    top: 0;
+    inset: 9px;
 
-    left: 0;
+    border:
 
-    width: 100%;
+        1px solid
+        rgba(230,169,69,0.18);
 
-    height: 5px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            var(--dorado),
-            var(--azul),
-            var(--dorado)
-        );
+    pointer-events: none;
 
 }
 
 
 /* =====================================================
-   TEXTO SUPERIOR
+   DECORACIÓN SUPERIOR
+===================================================== */
+
+.top-decoration {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color: var(--dorado);
+
+    font-size: 17px;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =====================================================
+   TEXTO PEQUEÑO
 ===================================================== */
 
 .mini {
@@ -167,40 +253,87 @@ body {
 
     font-size: 10px;
 
-    font-weight: 600;
+    font-weight: 500;
 
     letter-spacing: 3px;
 
     text-transform: uppercase;
 
-    color: var(--dorado);
+    color: var(--blanco);
 
-    margin-bottom: 8px;
+    opacity: 0.9;
 
 }
 
 
 /* =====================================================
-   TÍTULO
+   TÍTULO PRINCIPAL
 ===================================================== */
 
 h1 {
 
     margin:
-        5px 0 12px;
+        15px 0 7px;
 
     font-family:
+
         'Playfair Display',
         Georgia,
         serif;
 
-    font-size: 34px;
+    font-size: 31px;
 
-    line-height: 1.15;
+    line-height: 1.2;
 
-    font-weight: 600;
+    font-weight: 500;
 
-    color: var(--azul-marino);
+    color: var(--blanco);
+
+}
+
+
+/* =====================================================
+   DETALLE DORADO
+===================================================== */
+
+.gold-line {
+
+    width: 95px;
+
+    height: 1px;
+
+    margin:
+        15px auto 20px;
+
+    background:
+        var(--dorado);
+
+    position: relative;
+
+}
+
+
+.gold-line::before {
+
+    content: "◆";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: 7px;
+
+    color: var(--dorado);
+
+    background:
+        var(--azul-marino);
+
+    padding: 0 7px;
 
 }
 
@@ -212,7 +345,7 @@ h1 {
 .hello {
 
     margin:
-        0 auto 28px;
+        0 auto 30px;
 
     font-family:
         'Lora',
@@ -223,32 +356,33 @@ h1 {
 
     line-height: 1.5;
 
-    color: var(--azul);
+    color: var(--texto-suave);
 
 }
 
 
 /* =====================================================
-   LUGARES RESERVADOS
+   BLOQUE DE LUGARES
 ===================================================== */
 
 .reserved {
 
-    padding: 23px 20px;
+    padding:
+        25px 20px 23px;
 
-    border-radius: 20px;
+    margin:
+        0 auto;
+
+    max-width: 300px;
 
     background:
 
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #faf8f2
-        );
+        rgba(255,255,255,0.045);
 
     border:
+
         1px solid
-        rgba(230,169,69,0.35);
+        rgba(230,169,69,0.5);
 
     position: relative;
 
@@ -256,31 +390,33 @@ h1 {
 
 
 /* =====================================================
-   DETALLE DORADO
+   DECORACIÓN DEL BLOQUE
 ===================================================== */
 
 .reserved::before {
 
-    content: "";
+    content: "✦";
 
     position: absolute;
 
-    left: 50%;
+    top: -9px;
 
-    top: 0;
+    left: 50%;
 
     transform:
         translateX(-50%);
 
-    width: 55px;
-
-    height: 3px;
-
     background:
+        var(--azul-marino);
+
+    padding:
+        0 8px;
+
+    color:
         var(--dorado);
 
-    border-radius:
-        0 0 5px 5px;
+    font-size:
+        12px;
 
 }
 
@@ -296,39 +432,49 @@ h1 {
         Georgia,
         serif;
 
-    font-size: 48px;
+    font-size:
+        50px;
 
-    font-weight: 600;
+    line-height:
+        1;
 
-    line-height: 1;
+    font-weight:
+        500;
 
     color:
-        var(--azul);
+        var(--dorado);
 
 }
 
 
 /* =====================================================
-   TEXTO LUGARES
+   TEXTO DE LUGARES
 ===================================================== */
 
 .label {
 
-    margin-top: 9px;
+    margin-top:
+        10px;
 
     font-family:
         'Montserrat',
         Arial,
         sans-serif;
 
-    font-size: 11px;
+    font-size:
+        10px;
 
-    font-weight: 500;
+    letter-spacing:
+        1px;
 
-    letter-spacing: 0.5px;
+    text-transform:
+        uppercase;
 
     color:
-        var(--gris);
+        var(--blanco);
+
+    opacity:
+        0.78;
 
 }
 
@@ -340,19 +486,18 @@ h1 {
 .question {
 
     margin:
-        30px 0 17px;
+        34px 0 17px;
 
     font-family:
         'Playfair Display',
         Georgia,
         serif;
 
-    font-size: 21px;
-
-    font-weight: 500;
+    font-size:
+        20px;
 
     color:
-        var(--azul-marino);
+        var(--blanco);
 
 }
 
@@ -363,15 +508,27 @@ h1 {
 
 .options {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(5, 1fr);
 
-    gap: 9px;
+    gap:
+        8px;
+
+    max-width:
+        320px;
+
+    margin:
+        0 auto;
 
 }
 
+
+/* =====================================================
+   BOTÓN DE CANTIDAD
+===================================================== */
 
 .options button {
 
@@ -380,16 +537,16 @@ h1 {
 
     border:
         1px solid
-        rgba(28,47,87,0.20);
+        rgba(230,169,69,0.65);
 
     border-radius:
-        12px;
+        2px;
 
     background:
-        #ffffff;
+        transparent;
 
     color:
-        var(--azul-marino);
+        var(--blanco);
 
     font-family:
         'Montserrat',
@@ -397,10 +554,10 @@ h1 {
         sans-serif;
 
     font-size:
-        16px;
+        15px;
 
     font-weight:
-        600;
+        500;
 
     cursor:
         pointer;
@@ -412,51 +569,46 @@ h1 {
 
 
 /* =====================================================
-   BOTONES AL PASAR EL CURSOR
+   HOVER
 ===================================================== */
 
 .options button:hover {
 
+    background:
+        rgba(230,169,69,0.12);
+
     border-color:
         var(--dorado);
 
-    color:
-        var(--azul);
-
     transform:
         translateY(-2px);
-
-    box-shadow:
-        0 5px 12px
-        rgba(230,169,69,0.15);
 
 }
 
 
 /* =====================================================
-   BOTÓN SELECCIONADO
+   SELECCIONADO
 ===================================================== */
 
 .options button.selected {
 
     background:
-        var(--azul-marino);
+        var(--dorado);
 
     color:
-        var(--blanco);
-
-    border-color:
         var(--azul-marino);
 
-    box-shadow:
-        0 6px 15px
-        rgba(28,47,87,0.20);
+    border-color:
+        var(--dorado);
+
+    font-weight:
+        700;
 
 }
 
 
 /* =====================================================
-   WHATSAPP
+   BOTÓN WHATSAPP
 ===================================================== */
 
 .whatsapp {
@@ -467,34 +619,44 @@ h1 {
     width:
         100%;
 
-    margin-top:
-        23px;
+    max-width:
+        300px;
+
+    margin:
+        27px auto 0;
 
     padding:
-        16px;
+        15px 18px;
+
+    border:
+        1px solid
+        var(--dorado);
 
     border-radius:
-        14px;
+        3px;
 
     background:
         var(--azul-marino);
 
     color:
-        white;
+        var(--blanco);
 
     font-family:
         'Montserrat',
         Arial,
         sans-serif;
 
+    font-size:
+        11px;
+
     font-weight:
         600;
 
-    font-size:
-        14px;
-
     letter-spacing:
-        0.2px;
+        0.7px;
+
+    text-transform:
+        uppercase;
 
     text-decoration:
         none;
@@ -506,7 +668,7 @@ h1 {
         none;
 
     transition:
-        all 0.2s ease;
+        all 0.25s ease;
 
 }
 
@@ -529,14 +691,14 @@ h1 {
 .whatsapp.enabled:hover {
 
     background:
-        var(--azul);
+        var(--dorado);
 
-    transform:
-        translateY(-1px);
+    color:
+        var(--azul-marino);
 
     box-shadow:
-        0 7px 18px
-        rgba(5,48,141,0.20);
+        0 8px 22px
+        rgba(230,169,69,0.2);
 
 }
 
@@ -556,13 +718,31 @@ h1 {
         sans-serif;
 
     font-size:
-        10px;
-
-    color:
-        #858585;
+        9px;
 
     line-height:
         1.5;
+
+    color:
+        rgba(255,255,255,0.58);
+
+}
+
+
+/* =====================================================
+   CORAZÓN INFERIOR
+===================================================== */
+
+.heart {
+
+    margin-top:
+        27px;
+
+    color:
+        var(--dorado);
+
+    font-size:
+        15px;
 
 }
 
@@ -574,7 +754,7 @@ h1 {
 .error {
 
     color:
-        #9b3348;
+        var(--dorado);
 
     font-family:
         'Montserrat',
@@ -596,18 +776,18 @@ h1 {
     body {
 
         padding:
-            15px;
+            15px 10px;
 
     }
 
 
     .card {
 
-        padding:
-            38px 20px 30px;
+        min-height:
+            620px;
 
-        border-radius:
-            23px;
+        padding:
+            42px 20px 32px;
 
     }
 
@@ -615,7 +795,7 @@ h1 {
     h1 {
 
         font-size:
-            29px;
+            28px;
 
     }
 
@@ -628,10 +808,18 @@ h1 {
     }
 
 
+    .reserved {
+
+        max-width:
+            280px;
+
+    }
+
+
     .number {
 
         font-size:
-            43px;
+            45px;
 
     }
 
@@ -646,6 +834,9 @@ h1 {
 
     .options {
 
+        max-width:
+            280px;
+
         gap:
             6px;
 
@@ -655,10 +846,18 @@ h1 {
     .options button {
 
         padding:
-            12px 4px;
+            12px 3px;
 
         font-size:
-            15px;
+            14px;
+
+    }
+
+
+    .whatsapp {
+
+        max-width:
+            280px;
 
     }
 
@@ -676,6 +875,17 @@ h1 {
 
 
     <!-- =================================================
+         DECORACIÓN
+    ================================================== -->
+
+    <div class="top-decoration">
+
+        ✦　♡　✦
+
+    </div>
+
+
+    <!-- =================================================
          ENCABEZADO
     ================================================== -->
 
@@ -688,9 +898,12 @@ h1 {
 
     <h1 id="title">
 
-        ¡Nos encantará contar contigo!
+        ¿Nos acompañarás?
 
     </h1>
+
+
+    <div class="gold-line"></div>
 
 
     <p
@@ -759,7 +972,7 @@ h1 {
         target="_blank"
         rel="noopener">
 
-        Confirmar por WhatsApp
+        Confirmar asistencia ♡
 
     </a>
 
@@ -767,6 +980,13 @@ h1 {
     <div
         class="note"
         id="note">
+    </div>
+
+
+    <div class="heart">
+
+        ♡
+
     </div>
 
 
@@ -784,25 +1004,6 @@ h1 {
         ⭐⭐⭐  SOLO MODIFICA ESTA PARTE ⭐⭐⭐
 
 ################################################################
-################################################################
-
-
-Aquí vas a colocar TODOS tus invitados.
-
-Ejemplo:
-
-"familia-perez": {
-
-    nombre: "Familia Pérez",
-
-    lugares: 5
-
-}
-
-El código será utilizado para crear
-el enlace personalizado.
-
-
 ################################################################
 */
 
@@ -868,31 +1069,13 @@ const INVITADOS = {
 */
 
 
-/*
-===============================================================
-WHATSAPP
-===============================================================
-*/
-
 const WHATSAPP =
     "50494921882";
 
 
-/*
-===============================================================
-NOMBRE DEL EVENTO
-===============================================================
-*/
-
 const EVENTO =
     "los XV de Leah";
 
-
-/*
-===============================================================
-LEER EL CÓDIGO DEL INVITADO
-===============================================================
-*/
 
 const parametros =
     new URLSearchParams(
@@ -908,21 +1091,9 @@ const id =
     .trim();
 
 
-/*
-===============================================================
-BUSCAR INVITADO
-===============================================================
-*/
-
 const invitado =
     INVITADOS[id];
 
-
-/*
-===============================================================
-ELEMENTOS
-===============================================================
-*/
 
 const title =
     document.getElementById(
@@ -960,41 +1131,16 @@ const note =
     );
 
 
-/*
-===============================================================
-COMPROBAR INVITADO
-===============================================================
-*/
-
 if (invitado) {
 
 
-    /*
-    -----------------------------------------------------------
-    SALUDO
-    -----------------------------------------------------------
-    */
-
     hello.textContent =
-        `¡Hola, ${invitado.nombre}! 💜`;
+        `¡Hola, ${invitado.nombre}! 💙`;
 
-
-    /*
-    -----------------------------------------------------------
-    MOSTRAR LUGARES
-    -----------------------------------------------------------
-    */
 
     max.textContent =
         invitado.lugares;
 
-
-
-    /*
-    -----------------------------------------------------------
-    CREAR BOTONES
-    -----------------------------------------------------------
-    */
 
     for (
         let i = 1;
@@ -1017,20 +1163,9 @@ if (invitado) {
             "button";
 
 
-
-        /*
-        -------------------------------------------------------
-        CUANDO EL INVITADO SELECCIONA
-        -------------------------------------------------------
-        */
-
         boton.onclick =
             function() {
 
-
-                /*
-                Quitar selección
-                */
 
                 document
                     .querySelectorAll(
@@ -1047,20 +1182,10 @@ if (invitado) {
                     );
 
 
-
-                /*
-                Marcar seleccionado
-                */
-
                 boton.classList.add(
                     "selected"
                 );
 
-
-
-                /*
-                PERSONA / PERSONAS
-                */
 
                 const personas =
                     i === 1
@@ -1068,14 +1193,9 @@ if (invitado) {
                         : "personas";
 
 
-
-                /*
-                MENSAJE WHATSAPP
-                */
-
                 const mensaje =
 
-                    `¡Hola! 💜 ` +
+                    `¡Hola! 💙 ` +
 
                     `Confirmo mi asistencia ` +
 
@@ -1092,11 +1212,6 @@ if (invitado) {
                     `Nombre: ${invitado.nombre}.`;
 
 
-
-                /*
-                CREAR ENLACE WHATSAPP
-                */
-
                 whatsapp.href =
 
                     `https://wa.me/` +
@@ -1110,20 +1225,10 @@ if (invitado) {
                     );
 
 
-
-                /*
-                ACTIVAR BOTÓN
-                */
-
                 whatsapp.classList.add(
                     "enabled"
                 );
 
-
-
-                /*
-                MENSAJE DE AYUDA
-                */
 
                 note.textContent =
 
@@ -1136,12 +1241,6 @@ if (invitado) {
             };
 
 
-        /*
-        -------------------------------------------------------
-        AGREGAR BOTÓN
-        -------------------------------------------------------
-        */
-
         options.appendChild(
             boton
         );
@@ -1151,16 +1250,6 @@ if (invitado) {
 
 }
 
-
-/*
-################################################################
-################################################################
-
-                    INVITADO NO ENCONTRADO
-
-################################################################
-################################################################
-*/
 
 else {
 
@@ -1178,7 +1267,6 @@ else {
         'confirmación sea correcto.' +
 
         '</span>';
-
 
 
     document
