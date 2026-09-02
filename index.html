@@ -28,15 +28,15 @@
 
     --azul-marino: #1C2F57;
 
+    --azul-fondo: #06264B;
+
     --azul: #05308D;
 
     --dorado: #e6a945;
 
     --blanco: #FFFFFF;
 
-    --dorado-suave: rgba(230,169,69,0.55);
-
-    --texto-suave: rgba(255,255,255,0.82);
+    --texto-suave: rgba(255,255,255,0.88);
 
 }
 
@@ -47,6 +47,11 @@
 
 * {
     box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
 }
 
 
@@ -62,7 +67,7 @@ body {
 
     align-items: center;
 
-    padding: 25px 15px;
+    padding: 35px 15px;
 
     font-family:
         'Lora',
@@ -71,85 +76,34 @@ body {
 
     color: var(--blanco);
 
-    background:
+    /*
+       FONDO DE LOS XV
+       La imagen debe llamarse fondo.png
+    */
 
-        radial-gradient(
-            circle at 15% 10%,
-            rgba(5,48,141,0.45),
-            transparent 28%
-        ),
+    background-color:
+        var(--azul-fondo);
 
-        radial-gradient(
-            circle at 90% 85%,
-            rgba(5,48,141,0.35),
-            transparent 30%
-        ),
+    background-image:
+        url("fondo.png");
 
-        var(--azul-marino);
+    background-position:
+        center top;
+
+    background-repeat:
+        no-repeat;
+
+    /*
+       Se adapta al ancho del celular
+       sin deformar la imagen.
+    */
+
+    background-size:
+        100% auto;
 
     position: relative;
 
     overflow-x: hidden;
-
-}
-
-
-/* =====================================================
-   ESTRELLAS DECORATIVAS
-===================================================== */
-
-body::before {
-
-    content:
-        "✦     ˚          ✧          ✦     ˚";
-
-    position: fixed;
-
-    top: 25px;
-
-    left: 0;
-
-    width: 100%;
-
-    text-align: center;
-
-    color: var(--dorado);
-
-    font-size: 13px;
-
-    letter-spacing: 12px;
-
-    opacity: 0.75;
-
-    pointer-events: none;
-
-}
-
-
-body::after {
-
-    content:
-        "✧       ✦          ˚       ✧";
-
-    position: fixed;
-
-    bottom: 25px;
-
-    left: 0;
-
-    width: 100%;
-
-    text-align: center;
-
-    color: var(--dorado);
-
-    font-size: 12px;
-
-    letter-spacing: 15px;
-
-    opacity: 0.7;
-
-    pointer-events: none;
 
 }
 
@@ -162,35 +116,33 @@ body::after {
 
     width: 100%;
 
-    max-width: 480px;
+    max-width: 430px;
 
     min-height: 650px;
 
-    padding: 48px 32px 40px;
+    padding: 42px 28px 38px;
 
     text-align: center;
 
     position: relative;
 
-    background:
+    /*
+       MUY TRANSPARENTE PARA DEJAR VER
+       LAS FLORES DEL FONDO
+    */
 
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.035),
-            rgba(5,48,141,0.14)
-        );
+    background:
+        rgba(6,38,75,0.18);
 
     border:
-
         1px solid
-        rgba(230,169,69,0.65);
+        rgba(230,169,69,0.60);
 
     border-radius: 4px;
 
     box-shadow:
-
         0 20px 60px
-        rgba(0,0,0,0.28);
+        rgba(0,0,0,0.20);
 
     overflow: hidden;
 
@@ -210,9 +162,8 @@ body::after {
     inset: 9px;
 
     border:
-
         1px solid
-        rgba(230,169,69,0.18);
+        rgba(230,169,69,0.20);
 
     pointer-events: none;
 
@@ -229,13 +180,17 @@ body::after {
         'Playfair Display',
         serif;
 
-    color: var(--dorado);
+    color:
+        var(--dorado);
 
-    font-size: 17px;
+    font-size:
+        17px;
 
-    letter-spacing: 6px;
+    letter-spacing:
+        6px;
 
-    margin-bottom: 18px;
+    margin-bottom:
+        17px;
 
 }
 
@@ -251,23 +206,29 @@ body::after {
         Arial,
         sans-serif;
 
-    font-size: 10px;
+    font-size:
+        10px;
 
-    font-weight: 500;
+    font-weight:
+        500;
 
-    letter-spacing: 3px;
+    letter-spacing:
+        3px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    color: var(--blanco);
+    color:
+        var(--blanco);
 
-    opacity: 0.9;
+    opacity:
+        0.95;
 
 }
 
 
 /* =====================================================
-   TÍTULO PRINCIPAL
+   TÍTULO
 ===================================================== */
 
 h1 {
@@ -276,31 +237,40 @@ h1 {
         15px 0 7px;
 
     font-family:
-
         'Playfair Display',
         Georgia,
         serif;
 
-    font-size: 31px;
+    font-size:
+        31px;
 
-    line-height: 1.2;
+    line-height:
+        1.2;
 
-    font-weight: 500;
+    font-weight:
+        500;
 
-    color: var(--blanco);
+    color:
+        var(--blanco);
+
+    text-shadow:
+        0 2px 8px
+        rgba(0,0,0,0.20);
 
 }
 
 
 /* =====================================================
-   DETALLE DORADO
+   LÍNEA DORADA
 ===================================================== */
 
 .gold-line {
 
-    width: 95px;
+    width:
+        95px;
 
-    height: 1px;
+    height:
+        1px;
 
     margin:
         15px auto 20px;
@@ -308,32 +278,40 @@ h1 {
     background:
         var(--dorado);
 
-    position: relative;
+    position:
+        relative;
 
 }
 
 
 .gold-line::before {
 
-    content: "◆";
+    content:
+        "◆";
 
-    position: absolute;
+    position:
+        absolute;
 
-    left: 50%;
+    left:
+        50%;
 
-    top: 50%;
+    top:
+        50%;
 
     transform:
         translate(-50%, -50%);
 
-    font-size: 7px;
+    font-size:
+        7px;
 
-    color: var(--dorado);
+    color:
+        var(--dorado);
 
     background:
-        var(--azul-marino);
+        var(--azul-fondo);
 
-    padding: 0 7px;
+    padding:
+        0 7px;
 
 }
 
@@ -352,11 +330,18 @@ h1 {
         Georgia,
         serif;
 
-    font-size: 19px;
+    font-size:
+        19px;
 
-    line-height: 1.5;
+    line-height:
+        1.5;
 
-    color: var(--texto-suave);
+    color:
+        var(--texto-suave);
+
+    text-shadow:
+        0 2px 6px
+        rgba(0,0,0,0.25);
 
 }
 
@@ -373,18 +358,26 @@ h1 {
     margin:
         0 auto;
 
-    max-width: 300px;
+    max-width:
+        300px;
+
+    /*
+       BLANCO COMPLETAMENTE SÓLIDO
+    */
 
     background:
-
-        rgba(255,255,255,0.050);
+        #FFFFFF;
 
     border:
-
         1px solid
-        rgba(230,169,69,0.5);
+        rgba(230,169,69,0.75);
 
-    position: relative;
+    position:
+        relative;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.15);
 
 }
 
@@ -395,19 +388,23 @@ h1 {
 
 .reserved::before {
 
-    content: "✦";
+    content:
+        "✦";
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: -9px;
+    top:
+        -9px;
 
-    left: 50%;
+    left:
+        50%;
 
     transform:
         translateX(-50%);
 
     background:
-        var(--azul-marino);
+        #FFFFFF;
 
     padding:
         0 8px;
@@ -422,18 +419,18 @@ h1 {
 
 
 /* =====================================================
-   NÚMERO
+   NÚMERO DE LUGARES
 ===================================================== */
 
 .number {
 
     font-family:
-        'Lora',
+        'Playfair Display',
         Georgia,
         serif;
 
     font-size:
-        60px;
+        50px;
 
     line-height:
         1;
@@ -470,11 +467,15 @@ h1 {
     text-transform:
         uppercase;
 
+    /*
+       AZUL SOBRE BLANCO
+    */
+
     color:
-        var(--blanco);
+        var(--azul-marino);
 
     opacity:
-        0.78;
+        1;
 
 }
 
@@ -498,6 +499,10 @@ h1 {
 
     color:
         var(--blanco);
+
+    text-shadow:
+        0 2px 6px
+        rgba(0,0,0,0.25);
 
 }
 
@@ -537,13 +542,13 @@ h1 {
 
     border:
         1px solid
-        rgba(230,169,69,0.65);
+        rgba(230,169,69,0.75);
 
     border-radius:
         2px;
 
     background:
-        transparent;
+        rgba(6,38,75,0.55);
 
     color:
         var(--blanco);
@@ -575,7 +580,7 @@ h1 {
 .options button:hover {
 
     background:
-        rgba(230,169,69,0.12);
+        rgba(230,169,69,0.18);
 
     border-color:
         var(--dorado);
@@ -636,7 +641,7 @@ h1 {
         3px;
 
     background:
-        var(--azul-marino);
+        rgba(6,38,75,0.72);
 
     color:
         var(--blanco);
@@ -698,7 +703,7 @@ h1 {
 
     box-shadow:
         0 8px 22px
-        rgba(230,169,69,0.2);
+        rgba(230,169,69,0.25);
 
 }
 
@@ -724,13 +729,13 @@ h1 {
         1.5;
 
     color:
-        rgba(255,255,255,0.58);
+        rgba(255,255,255,0.70);
 
 }
 
 
 /* =====================================================
-   CORAZÓN INFERIOR
+   CORAZÓN
 ===================================================== */
 
 .heart {
@@ -771,23 +776,48 @@ h1 {
    CELULARES
 ===================================================== */
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
 
     body {
 
+        /*
+           El fondo se mantiene pegado arriba
+           y ocupa todo el ancho del celular.
+        */
+
+        background-size:
+            100% auto;
+
         padding:
-            15px 10px;
+            25px 12px;
+
+        align-items:
+            flex-start;
 
     }
 
 
     .card {
 
+        max-width:
+            390px;
+
         min-height:
-            620px;
+            650px;
+
+        margin-top:
+            15px;
 
         padding:
-            42px 20px 32px;
+            38px 20px 32px;
+
+        /*
+           Un poco más transparente
+           para que se vean las flores.
+        */
+
+        background:
+            rgba(6,38,75,0.12);
 
     }
 
@@ -863,6 +893,116 @@ h1 {
 
 }
 
+
+/* =====================================================
+   CELULARES PEQUEÑOS
+===================================================== */
+
+@media (max-width: 380px) {
+
+    body {
+
+        padding:
+            15px 8px;
+
+    }
+
+
+    .card {
+
+        padding:
+            35px 15px 28px;
+
+    }
+
+
+    .top-decoration {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .mini {
+
+        font-size:
+            9px;
+
+        letter-spacing:
+            2.5px;
+
+    }
+
+
+    h1 {
+
+        font-size:
+            26px;
+
+    }
+
+
+    .hello {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .reserved {
+
+        max-width:
+            260px;
+
+    }
+
+
+    .number {
+
+        font-size:
+            43px;
+
+    }
+
+
+    .question {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .options {
+
+        max-width:
+            260px;
+
+    }
+
+
+    .options button {
+
+        padding:
+            11px 2px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .whatsapp {
+
+        max-width:
+            260px;
+
+    }
+
+}
+
 </style>
 
 </head>
@@ -891,7 +1031,7 @@ h1 {
 
     <div class="mini">
 
-        CONFIRMACIÓN XV LEAH
+        XV Leah · Confirmación
 
     </div>
 
@@ -1135,7 +1275,7 @@ if (invitado) {
 
 
     hello.textContent =
-        `¡Hola, ${invitado.nombre}! ♡`;
+        `¡Hola, ${invitado.nombre}! 💙`;
 
 
     max.textContent =
